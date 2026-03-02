@@ -56,7 +56,7 @@ const VerificationCreate = ({ processCredential }) => {
           message: backendError?.message,
         });
       } else {
-        alert(backendError?.message);
+         alert(backendError?.message || 'Internal Server Error !');
       }
     } finally {
       setLoading(false);
