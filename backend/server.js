@@ -26,6 +26,14 @@ app.use((req, res) => {
   });
 });
 
+app.use((err, req, res, next)=> {
+  
+  return res.status(500).json({
+    type: 'serverError',
+    message: err?.message
+  })
+})
+
 const startServer = async () => {
   try {
     await connectDB();
